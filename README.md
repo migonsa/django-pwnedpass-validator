@@ -1,4 +1,4 @@
-# Miguel G
+# Miguel Gonzále Saiz
 ## Django installable app 'django-pwnedpass-validator'
 
 
