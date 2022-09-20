@@ -241,7 +241,7 @@ bool create_ribbon128(char* filename, uint32_t maxkeys, uint8_t r, double oversi
     { 
         uint8_t *ptr;
         uint32_t index = key->index;
-        index = ((uint64_t) index*n)>>32;
+        index = ((uint64_t) index*n)>>32; // // From https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
 		ptr = (uint8_t*)(coeff+index);
 		__builtin_prefetch(ptr);
 		__builtin_prefetch(ptr+8);
@@ -299,7 +299,7 @@ bool query_ribbon128_r8(const ribbon128_key_t* key)
 	__m128i v = _mm_loadu_si128((__m128i *)&key->ribbon);
     v = _mm_or_si128(v, msbmask);
 
-    uint32_t index = ((uint64_t) key->index*(filter.m - RIBBON128_EXTRA))>>32;
+    uint32_t index = ((uint64_t) key->index*(filter.m - RIBBON128_EXTRA))>>32; // From https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
     
     __m256i* ptr = (__m256i *)(filter.f + index);
     __m256i vv = _mm256_setr_m128i(v,v);
@@ -363,7 +363,7 @@ bool query_ribbon128_r16(const ribbon128_key_t* key)
     v = _mm_or_si128(v, msbmask);
 	uint32_t index = key->index;
 
-    index = ((uint64_t) index*(filter.m - RIBBON128_EXTRA))>>32;
+    index = ((uint64_t) index*(filter.m - RIBBON128_EXTRA))>>32; // From https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/
 
     uint16_t *fptr = (uint16_t*) filter.f;
     __m256i* ptr = (__m256i *)(fptr + index);
