@@ -45,7 +45,14 @@ The local mode is designed so that a single instance of Django can have the filt
 
 ## Settings
 
-
+| Setting Variable | Meaning                                                                     | Possible Values                                       | Default Value | Extra Info                                                                                                                                                                          |
+|:----------------:|:---------------------------------------------------------------------------:|:-----------------------------------------------------:|:-------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| FILTER           | Type of filter among the possible ones to be constructed and kept in memory | ribbon128 <br /> xor <br /> binaryfuse8 <br /> splitblockbloom <br /> dummy | ribbon128     | There is a setting called *POSSIBLE_FILTERS* which contains all the possible filters to be constructed. The *dummy* filter is for testing purposes, because it always returns True. |
+|                  |                                                                             |                                                       |               |                                                                                                                                                                                     |
+|                  |                                                                             |                                                       |               |                                                                                                                                                                                     |
+|                  |                                                                             |                                                       |               |                                                                                                                                                                                     |
+|                  |                                                                             |                                                       |               |                                                                                                                                                                                     |
+|                  |                                                                             |                                                       |               |                                                                                                                                                                                     |
 
 
 ## Running Tests
