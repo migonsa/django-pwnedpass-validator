@@ -35,6 +35,10 @@ Add django-pwnedpass-validator's FilterValidator:
         }
     ]
 
+## Documentation
+
+This work has been done for the thesis of the Master in Cybersecurity of the Universidad Carlos III de Madrid. All the work done has been documented in the following file: 
+* [django-pwnedpass-validator.pdf](https://github.com/migonsa/django-pwnedpass-validator/blob/main/docs/django-pwnedpass-validator.pdf)
 
 ## Features
 
